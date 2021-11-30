@@ -11,7 +11,8 @@ def get_count_by_interface(datas):
 
         # 计算配置数
         config_count = Configures.objects.filter(interface_id=interface_id).count()
-        create_time = datas[0]['create_time']
+        # create_time = datas[0]['create_time']
+        create_time = item['create_time']
         item['create_time'] = create_time.split('T')[0] + ' ' + create_time.split('T')[1].split('.')[0]
         item['testcases'] = testcases_count
         item['configures'] = config_count

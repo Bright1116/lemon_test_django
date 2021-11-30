@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'django_filters',
     'corsheaders',
+    'drf_yasg',
 
     # 应用名.apps.应用名首字母大写Config
     # 'apps.projects.apps.ProjectsConfig',
