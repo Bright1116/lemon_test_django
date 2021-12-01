@@ -11,7 +11,6 @@ class InterfacesSerializer(serializers.ModelSerializer):
     project_id = serializers.PrimaryKeyRelatedField(queryset=Projects.objects.all(),
                                                     label='项目id', help_text='项目id')
 
-
     class Meta:
         model = Interfaces
         fields = ('id', 'name', 'tester', 'create_time', 'desc', 'project', 'project_id')

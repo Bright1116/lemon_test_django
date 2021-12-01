@@ -33,7 +33,7 @@ class ConfiguresViewSet(ModelViewSet):
     retrieve:
     获取配置详情
     """
-    queryset = Configures.objects.all()
+    queryset = Configures.objects.filter(is_delete=False)
     serializer_class = ConfiguresSerializer
     permission_classes = (permissions.IsAuthenticated, )
     ordering_fields = ('id', 'name')

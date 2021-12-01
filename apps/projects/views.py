@@ -47,7 +47,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
     获取某个项目下的所有接口信息
 
     """
-    queryset = Projects.objects.all()
+    queryset = Projects.objects.filter(is_delete=False)
     serializer_class = serializers.ProjectModelSerializer
     # filter_backends = [DjangoFilterBackend, OrderingFilter]
     # filterset_fields = ['name', 'leader', 'tester']

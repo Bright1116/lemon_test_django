@@ -21,7 +21,7 @@ from .utils import modify_output, get_testcases_by_interface_ids
 class TestsuitsViewSet(ModelViewSet):
     """
     """
-    queryset = Testsuits.objects.all()
+    queryset = Testsuits.objects.filter(is_delete=False)
     serializer_class = TestsuitsSerializer
     permission_classes = [permissions.IsAuthenticated]
     ordering_fields = ('id', 'name')

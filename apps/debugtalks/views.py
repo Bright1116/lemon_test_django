@@ -21,7 +21,7 @@ class DebugTalksViewSet(mixins.ListModelMixin,
     partial_update:
     更新（部分）debugtalk
     """
-    queryset = DebugTalks.objects.all()
+    queryset = DebugTalks.objects.filter(is_delete=False)
     serializer_class = DebugTalksSerializer
     permission_classes = [permissions.IsAuthenticated]
     ordering_fields = ('id', 'project_id')

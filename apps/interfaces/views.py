@@ -43,7 +43,7 @@ class InterfacesViewSet(ModelViewSet):
     configures:
     返回某个接口的所有配置信息（ID和名称）
     """
-    queryset = Interfaces.objects.all()
+    queryset = Interfaces.objects.filter(is_delete=False)
     serializer_class = InterfacesSerializer
     permission_classes = [permissions.IsAuthenticated]
     ordering_fields = ('id', 'name')

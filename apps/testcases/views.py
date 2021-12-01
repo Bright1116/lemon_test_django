@@ -19,7 +19,7 @@ from utils import handle_datas, common
 class TestcasesViewSet(ModelViewSet):
     """
     """
-    queryset = Testcases.objects.all()
+    queryset = Testcases.objects.filter(is_delete=False)
     serializer_class = TestcasesSerializer
     permission_classes = [permissions.IsAuthenticated]
     ordering_fields = ('id', 'name')

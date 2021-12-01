@@ -21,7 +21,7 @@ class ReportsViewSet(mixins.RetrieveModelMixin,
                      GenericViewSet):
     """
     """
-    queryset = Reports.objects.all()
+    queryset = Reports.objects.filter(is_delete=False)
     serializer_class = ReportsSerializer
     permission_classes = (permissions.IsAuthenticated,)
     ordering_fields = ('id', 'name')

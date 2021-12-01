@@ -31,7 +31,7 @@ class EnvsViewSet(ModelViewSet):
     names:
     返回所有环境变量ID和名称
     """
-    queryset = Envs.objects.all()
+    queryset = Envs.objects.filter(is_delete=False)
     serializer_class = EnvsSerializer
     permission_classes = [permissions.IsAuthenticated]
     ordering_fields = ('id', 'name')
